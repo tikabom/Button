@@ -1,0 +1,25 @@
+{
+  "name": "button",
+  "version": "1.0.0",
+  "description": "button coding challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tikabom/Button.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "tikabom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tikabom/Button/issues"
+  },
+  "homepage": "https://github.com/tikabom/Button#readme",
+  "dependencies": {
+    "react": "^16.3.2"
+  }
+}

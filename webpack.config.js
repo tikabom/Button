@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
-  context: __dirname,
+  context: path.join(__dirname, 'app'),
   entry: "./src/index.js",
   module: {
     loaders: [
@@ -19,7 +19,11 @@ module.exports = {
     ]
   },
   output: {
-    path: __dirname,
-    filename: "bundle.js"
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/'
+  },
+  devServer: {
+    historyApiFallback: true,
   }
 };

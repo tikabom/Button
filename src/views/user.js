@@ -1,12 +1,14 @@
 import React from 'react';
 
-import TableView from './tableview';
+import TableView from '../components/tableview';
 
 import {
   getUsers,
   addUser,
   deleteUser
 } from '../api';
+
+import './user.css';
 
 class UserView extends React.Component{
   constructor(props) {
@@ -65,7 +67,8 @@ class UserView extends React.Component{
             users,
             createUser: false,
             name: '',
-            email: ''
+            email: '',
+            id: null
           });
         }).catch((err) => {
           console.log('error adding user', err);
@@ -84,6 +87,7 @@ class UserView extends React.Component{
         getUsers(this.state.candidate).then((users) => {
           this.setState({
             users,
+            id: null
           });
         }).catch((err) => {
           console.log('error deleting user with id', this.state.id, err);
@@ -100,12 +104,9 @@ class UserView extends React.Component{
     return (
       <div>
         <h2>NAMESPACE: {this.state.candidate}</h2>
-        <div>
-          <div>Users</div>
-          <div>
-            <input type='button' value='Add User'
-            onClick={() => { this.setState({createUser: true}); }}/>
-          </div>
+        <div className='add'>
+          <input type='button' value='Add User'
+          onClick={() => { this.setState({createUser: true}); }}/>
         </div>
         {this.state.createUser && (
           <form onSubmit={this.onUserAdd}>
@@ -115,6 +116,7 @@ class UserView extends React.Component{
                 type='text'
                 value={this.state.name}
                 onChange={(e) => { this.setState({name: e.target.value}); }}
+                required
               />
             </label>
             <label>
@@ -123,6 +125,7 @@ class UserView extends React.Component{
                 type='email'
                 value={this.state.email}
                 onChange={(e) => { this.setState({email: e.target.value}); }}
+                required
               />
             </label>
             <input type='submit' value='Submit' />
@@ -132,10 +135,10 @@ class UserView extends React.Component{
           tableData={this.state.users}
           onDelete={this.onUserDelete}
           onSelectionChanged={this.onUserSelectionChanged} />
-        <div>
+        <div className='delete'>
           <input type='button' value='Delete User' onClick={this.onUserDelete} disabled={!this.state.id} />
         </div>
-        <div>
+        <div className='view'>
           <input type='button' value='View Transfers' onClick={this.navigateToTransfers} disabled={!this.state.id} />
         </div>
         <div>

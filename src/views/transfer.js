@@ -1,11 +1,13 @@
 import React from 'react';
 
-import TableView from './tableview';
+import TableView from '../components/tableview';
 
 import {
   getTransfers,
   createTransfer,
 } from '../api';
+
+import './transfer.css';
 
 class TransferView extends React.Component{
   constructor(props) {
@@ -72,12 +74,9 @@ class TransferView extends React.Component{
     return (
       <div>
         <h2>NAMESPACE: {this.state.candidate}</h2>
-        <div>
-          <div>Transfers</div>
-          <div>
-            <input type='button' value='Create Transfer'
-            onClick={() => { this.setState({createTransfer: true}); }}/>
-          </div>
+        <div class='add'>
+          <input type='button' value='Create Transfer'
+          onClick={() => { this.setState({createTransfer: true}); }}/>
         </div>
         {this.state.createTransfer && (
           <form onSubmit={this.onTransferCreate}>
@@ -87,6 +86,7 @@ class TransferView extends React.Component{
                 type='text'
                 value={this.state.amount}
                 onChange={(e) => { this.setState({amount: e.target.value}); }}
+                required
               />
             </label>
             <input type='submit' value='Submit' />

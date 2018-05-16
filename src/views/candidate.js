@@ -4,6 +4,8 @@ import {
   getCandidates
 } from '../api';
 
+import './candidate.css';
+
 class Candidate extends React.Component {
   constructor(props) {
     super(props);
@@ -30,7 +32,7 @@ class Candidate extends React.Component {
       }
     });
   }
-  
+
   render() {
     const candidateItems = this.state.candidates.map((candidate) =>
       <li key={candidate}>
@@ -39,8 +41,8 @@ class Candidate extends React.Component {
     );
     return (
       <div>
-        <h1>Click on a namespace to get started</h1>
-        <div>
+        <h2>Click on a namespace to get started</h2>
+        <div className='candidates'>
           <ul>
             {candidateItems}
           </ul>

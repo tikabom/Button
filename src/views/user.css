@@ -1,0 +1,53 @@
+.add {
+  width: 50%;
+  margin-bottom: 1rem;
+}
+
+input[type='button']:disabled {
+  color: #a8a8a8;
+}
+
+.add input {
+  color: #01c629;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.delete, .view {
+  margin: 1rem;
+  display: inline-block;
+}
+
+.delete input {
+  color: #e50b00;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.view input {
+  color: #0090d8;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+a {
+  color: #003589;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #0259e2;
+}
+
+form {
+  margin: 1rem;
+}
+
+form label {
+  margin-right: 1rem;
+}
+
+form label input {
+  margin-left: 0.5rem;
+}

@@ -1,0 +1,25 @@
+.candidates ul {
+  width: 50%;
+  list-style-type: none;
+  font-size: 1rem;
+  padding: 0;
+}
+
+.candidates ul li {
+  padding: 0.5rem;
+  border-style: solid;
+  border-width: 1px 1px 0 1px;
+  border-color: #888989;
+}
+
+.candidates ul li:last-child {
+  border-bottom: 1px solid #888989;
+}
+
+.candidates ul li a {
+  color: #003589;
+  cursor: pointer;
+}
+.candidates ul li a:hover {
+  color: #0259e2;
+}
